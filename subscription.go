@@ -8,7 +8,7 @@ type unsubscriber interface {
 
 type Subscription struct {
 	unsubscriber unsubscriber
-	channel      chan []byte
+	channel      chan Response
 	active       bool
 	topics       []string
 	id           string
@@ -18,7 +18,7 @@ type Subscription struct {
 func newSubscription(u unsubscriber, id string, topics []string) *Subscription {
 	return &Subscription{
 		unsubscriber: u,
-		channel:      make(chan []byte, 0),
+		channel:      make(chan Response, 0),
 		topics:       topics,
 		id:           id,
 		active:       true,
@@ -26,12 +26,15 @@ func newSubscription(u unsubscriber, id string, topics []string) *Subscription {
 	}
 }
 
-func (s *Subscription) send(data []byte) {
+func (s *Subscription) send(channel string, data []byte) {
 	s.mutex.RLock()
 	defer s.mutex.RUnlock()
 
 	if s.active {
-		s.channel <- data
+		s.channel <- Response{
+			Topic:   channel,
+			Content: data,
+		}
 	}
 }
 
@@ -50,6 +53,6 @@ func (s *Subscription) Unsubscribe() error {
 	return nil
 }
 
-func (s *Subscription) Channel() chan []byte {
+func (s *Subscription) Channel() chan Response {
 	return s.channel
 }
