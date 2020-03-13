@@ -1,0 +1,6 @@
+github.com/gomodule/redigo v2.0.0+incompatible h1:K/R+8tc58AaqLkqG2Ol3Qk+DR/TlNuhuh457pBFPtt0=
+github.com/gomodule/redigo v2.0.0+incompatible/go.mod h1:B4C85qUVwatsJoIUNIfCRsp7qO0iAmpGFZ4EELWSbC4=
+github.com/mendelgusmao/flows v0.0.0-20200313183006-3b1d42b1fbf9 h1:0cWWwuohOxMCiSExTh1f2xpM0xKatWtW/0epdrw2lj0=
+github.com/mendelgusmao/flows v0.0.0-20200313183006-3b1d42b1fbf9/go.mod h1:aWXGNw5bFSRoW9RDGD9xbI+zr28DESORmxorr+DfwBU=
+github.com/mendelgusmao/flows v0.0.0-20200313185848-66ae18b55274 h1:8omU8nIDShJSdX9sm7jcdlLytHafQlcefN9cvC8rbks=
+github.com/mendelgusmao/flows v0.0.0-20200313185848-66ae18b55274/go.mod h1:aWXGNw5bFSRoW9RDGD9xbI+zr28DESORmxorr+DfwBU=
